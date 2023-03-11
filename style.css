@@ -1,0 +1,114 @@
+/* geral */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /*para os inputs nao passarem a margem da borda (não atrapalha layout)*/
+    font-family: Helvetica, sans-serif;
+    color: #323232;
+    border: none;
+}
+
+input, label {
+    display: block; /*cada elemento em uma linha */
+    width: 100%;
+}
+
+input:focus, label:focus {
+    outline: none; /*tira borda azul em volta dos inputs */
+}
+
+a {
+    color: #E60084; /*links rosa */
+}
+
+body{
+    padding-top: 5vh; /* view height -> 5% da tela (espaço começo da tela)*/
+    background-image: url('../img/desenvweb.jpg');
+    background-size: cover; /*centralizar e ocupar todo espaço */
+    background-position-y: -150px; /*subir um pouco a imagem*/
+}
+
+/*form*/
+#main-container{
+    width: 500px; /*delimitar largura na tela*/
+    margin-left: auto; /*centraliza container na horizontal*/
+    margin-right: auto;
+    background-color: #FFF;
+    border-radius: 10px; /*raio das bordas dos cantos*/
+    padding: 25px; /*espaçamento interno*/
+}
+
+#main-container h1{
+    text-align: center;
+    margin-bottom: 25px; /*afasto do formulario*/
+    font-size: 1.6rem; /*font adaptada/relativa ao elemento root(fonte setada) da pagina  - 1.6 vezes*/
+}
+
+form{
+    display: flex; /*flex box -> (para criar os half-box e full-box) , formulari tem display:flas pq é o container(entidade pai) que vai ter os flex dentro*/
+    flex-wrap: wrap;  /*conseguiur alinhar os elementos conforme adicionado no form (1 linha... 2 linhas) */
+    justify-content: space-between; /*espaçamento entre campos 50% */
+}
+
+.full-box{
+    flex: 1 1 100%; 
+    position: relative;
+}
+
+.half-box{
+    flex: 1 1 45%;
+    position: relative;
+}
+
+.spacing{   /* classe no html */
+    margin-right: 2.5%;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px; /*afasta texto das bordas*/
+    font-size: .9rem;
+    margin-bottom: 40px; /*afasta um input do outro */
+}
+
+input:focus{
+    border-color: #E60084;
+}
+
+input[type="submit"]{
+    background-color: #E60084;
+    color: #FFF;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#agreement{
+    margin-right: 5px;
+}
+
+#agreement, #agreement-label{
+    display: inline-block;
+    width: auto;
+}
+
+/*validações */
+
+.error-validation{
+    color: #FF1A1A;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+}
+
+.template{
+    display: none; /*quando adicionar validação remove template */
+}
+
+
